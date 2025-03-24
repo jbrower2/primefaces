@@ -1,47 +1,84 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:messages id="msgs" showDetail="true">
-                <p:autoUpdate/>
-            </p:messages>
+			<h:form id="form">
+				<p:messages id="msgs" showDetail="true">
+					<p:autoUpdate />
+				</p:messages>
 
-            <p:outputLabel for="@next" value="SelectOneMenu"/>
-            <p:selectOneMenu id="selectonemenu" value="#{selectOneMenu001.value}">
-                <f:selectItem itemLabel="Select a driver" itemValue="" noSelectionOption="true"/>
-                <f:selectItems value="#{selectOneMenu001.drivers}" var="driver" itemLabel="#{driver.name}" itemValue="#{driver.id}"/>
-                <p:ajax event="itemSelect" process="@this" listener="#{selectOneMenu001.onAjaxItemSelect}"/>
-            </p:selectOneMenu>
+				<p:outputLabel for="@next" value="SelectOneMenu" />
+				<p:selectOneMenu id="selectonemenu" value="#{selectOneMenu001.value}">
+					<f:selectItem
+						itemLabel="Select a driver"
+						itemValue=""
+						noSelectionOption="true"
+					/>
+					<f:selectItems
+						value="#{selectOneMenu001.drivers}"
+						var="driver"
+						itemLabel="#{driver.name}"
+						itemValue="#{driver.id}"
+					/>
+					<p:ajax
+						event="itemSelect"
+						process="@this"
+						listener="#{selectOneMenu001.onAjaxItemSelect}"
+					/>
+				</p:selectOneMenu>
 
-            <p:commandButton id="button" update="@form" value="Submit"/>
+				<p:commandButton id="button" update="@form" value="Submit" />
 
-            <hr/>
+				<hr />
 
-            <p:selectOneMenu id="selectonemenu2" value="#{selectOneMenu001.value2}" label="Select a driver" alwaysDisplayLabel="#{selectOneMenu001.alwaysDisplayLabel}">
-                <f:selectItem itemLabel="Select a driver" itemValue="" noSelectionOption="true"/>
-                <f:selectItems value="#{selectOneMenu001.drivers}" var="driver" itemLabel="#{driver.name}" itemValue="#{driver.id}"/>
-                <p:ajax event="change" process="@this" listener="#{selectOneMenu001.onAjaxChange()}"/>
-            </p:selectOneMenu>
+				<p:selectOneMenu
+					id="selectonemenu2"
+					value="#{selectOneMenu001.value2}"
+					label="Select a driver"
+					alwaysDisplayLabel="#{selectOneMenu001.alwaysDisplayLabel}"
+				>
+					<f:selectItem
+						itemLabel="Select a driver"
+						itemValue=""
+						noSelectionOption="true"
+					/>
+					<f:selectItems
+						value="#{selectOneMenu001.drivers}"
+						var="driver"
+						itemLabel="#{driver.name}"
+						itemValue="#{driver.id}"
+					/>
+					<p:ajax
+						event="change"
+						process="@this"
+						listener="#{selectOneMenu001.onAjaxChange()}"
+					/>
+				</p:selectOneMenu>
 
-            <hr/>
+				<hr />
 
-            <p:selectBooleanCheckbox id="alwaysDisplayLabel" value="#{selectOneMenu001.alwaysDisplayLabel}" itemLabel="alwaysDisplayLabel">
-                <p:ajax update="@form" process="@form" />
-            </p:selectBooleanCheckbox>
+				<p:selectBooleanCheckbox
+					id="alwaysDisplayLabel"
+					value="#{selectOneMenu001.alwaysDisplayLabel}"
+					itemLabel="alwaysDisplayLabel"
+				>
+					<p:ajax update="@form" process="@form" />
+				</p:selectBooleanCheckbox>
 
-        </h:form>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

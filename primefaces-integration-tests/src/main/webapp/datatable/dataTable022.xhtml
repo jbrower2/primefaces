@@ -1,28 +1,38 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces"
-      xmlns:pit="http://primefaces.org/ui/integrationtests"
-      xmlns:ui="jakarta.faces.facelets">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+	xmlns:pit="http://primefaces.org/ui/integrationtests"
+	xmlns:ui="jakarta.faces.facelets"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:dataTable id="datatable" value="#{dataTable022.progLanguages}" var="lang">
-                
-                <pit:includes src="/datatable/dataTable022Columns.xhtml" value="#{dataTable022.columns}" name="column">
-                    <ui:param name="data" value="#{lang}" />
-                </pit:includes>
+			<h:form id="form">
+				<p:dataTable
+					id="datatable"
+					value="#{dataTable022.progLanguages}"
+					var="lang"
+				>
 
-            </p:dataTable>
-        </h:form>
-    </h:body>
-</f:view>
+					<pit:includes
+						src="/datatable/dataTable022Columns.xhtml"
+						value="#{dataTable022.columns}"
+						name="column"
+					>
+						<ui:param name="data" value="#{lang}" />
+					</pit:includes>
+
+				</p:dataTable>
+			</h:form>
+		</h:body>
+	</f:view>
 
 </html>

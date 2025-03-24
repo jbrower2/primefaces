@@ -1,45 +1,72 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <style>
-                html .ui-datatable table { table-layout: auto; }
+			<h:form id="form">
+				<style>
+					html .ui-datatable table { table-layout: auto; }
                 td, th { white-space: nowrap; max-width: 120px; font-size: .75rem; }
-            </style>
+				</style>
 
-            <p:dataTable id="datatable" widgetVar="wgtTable" value="#{dataTable026.employees}" var="employee"
-                         filteredValue="#{dataTable026.filteredEmployees}" filterEvent="enter">
+				<p:dataTable
+					id="datatable"
+					widgetVar="wgtTable"
+					value="#{dataTable026.employees}"
+					var="employee"
+					filteredValue="#{dataTable026.filteredEmployees}"
+					filterEvent="enter"
+				>
 
-                <p:column headerText="ID" field="id"/>
-                <p:column headerText="salary notEquals" field="salary" filterMatchMode="notEquals"
-                          converter="jakarta.faces.Integer"/>
-                <p:column headerText="last login notBetween" field="lastLoginDateTime" filterMatchMode="notBetween">
-                    <f:facet name="filter">
-                        <p:datePicker selectionMode="range" onchange="PF('wgtTable').filter()" id="lastLoginDateTimeFilter"
-                                      pattern="yyyy-MM-dd" rangeSeparator="-" showOnFocus="false">
-                            <f:convertDateTime type="localDateTime"/>
-                        </p:datePicker>
-                    </f:facet>
-                </p:column>
+					<p:column headerText="ID" field="id" />
+					<p:column
+						headerText="salary notEquals"
+						field="salary"
+						filterMatchMode="notEquals"
+						converter="jakarta.faces.Integer"
+					/>
+					<p:column
+						headerText="last login notBetween"
+						field="lastLoginDateTime"
+						filterMatchMode="notBetween"
+					>
+						<f:facet name="filter">
+							<p:datePicker
+								selectionMode="range"
+								onchange="PF('wgtTable').filter()"
+								id="lastLoginDateTimeFilter"
+								pattern="yyyy-MM-dd"
+								rangeSeparator="-"
+								showOnFocus="false"
+							>
+								<f:convertDateTime type="localDateTime" />
+							</p:datePicker>
+						</f:facet>
+					</p:column>
 
-            </p:dataTable>
+				</p:dataTable>
 
-            <p:commandButton id="button" value="Submit" update="@form"/>
-            <p:commandButton id="buttonUpdate" value="Update" update="datatable"/>
-            <p:commandButton id="buttonResetTable" value="Reset" update="@form" action="#{dataTable026.resetTable()}"/>
-        </h:form>
+				<p:commandButton id="button" value="Submit" update="@form" />
+				<p:commandButton id="buttonUpdate" value="Update" update="datatable" />
+				<p:commandButton
+					id="buttonResetTable"
+					value="Reset"
+					update="@form"
+					action="#{dataTable026.resetTable()}"
+				/>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

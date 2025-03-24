@@ -1,55 +1,81 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:messages id="msgs" showDetail="true">
-                <p:autoUpdate/>
-            </p:messages>
+			<h:form id="form">
+				<p:messages id="msgs" showDetail="true">
+					<p:autoUpdate />
+				</p:messages>
 
-            <p:dataTable id="datatable"
-                         value="#{dataTable006.lazy ? dataTable006.lazyDataModel: dataTable006.progLanguages}"
-                         lazy="#{dataTable006.lazy}"
-                         var="lang"
-                         selection="#{dataTable006.selectedProgLanguages}"
-                         filteredValue="#{dataTable006.filteredProgLanguages}"
-                         rowKey="#{lang.id}"
-                         paginator="#{dataTable006.paginator}"
-                         rows="3"
-                         selectionPageOnly="#{dataTable006.selectionPageOnly}"
-            >
-                <p:column selectionBox="true" style="width:16px;text-align:center"/>
+				<p:dataTable
+					id="datatable"
+					value="#{dataTable006.lazy ? dataTable006.lazyDataModel: dataTable006.progLanguages}"
+					lazy="#{dataTable006.lazy}"
+					var="lang"
+					selection="#{dataTable006.selectedProgLanguages}"
+					filteredValue="#{dataTable006.filteredProgLanguages}"
+					rowKey="#{lang.id}"
+					paginator="#{dataTable006.paginator}"
+					rows="3"
+					selectionPageOnly="#{dataTable006.selectionPageOnly}"
+				>
+					<p:column selectionBox="true" style="width:16px;text-align:center" />
 
-                <p:column headerText="ID" field="id"/>
+					<p:column headerText="ID" field="id" />
 
-                <p:column headerText="Name" field="name"/>
+					<p:column headerText="Name" field="name" />
 
+					<p:column headerText="First appeared" field="firstAppeared" />
 
-                <p:column headerText="First appeared" field="firstAppeared"/>
+				</p:dataTable>
 
-            </p:dataTable>
+				<p:commandButton
+					id="button"
+					value="Submit"
+					update="@form"
+					action="#{dataTable006.submit}"
+				/>
+				<p:selectBooleanButton
+					id="toggleSelectPageOnly"
+					value="#{dataTable006.selectionPageOnly}"
+					onLabel="Page only"
+					offLabel="All pages"
+				>
+					<p:ajax update="@form" />
+				</p:selectBooleanButton>
+				<p:commandButton
+					id="toggleLazyMode"
+					value="Lazy Mode"
+					update="@form"
+					action="#{dataTable006.toggleLazyMode}"
+				/>
+				<p:commandButton
+					id="togglePaginator"
+					value="Paginator"
+					update="@form"
+					action="#{dataTable006.togglePaginator}"
+				/>
 
-            <p:commandButton id="button" value="Submit" update="@form" action="#{dataTable006.submit}"/>
-            <p:selectBooleanButton id="toggleSelectPageOnly" value="#{dataTable006.selectionPageOnly}"
-                                   onLabel="Page only" offLabel="All pages">
-                <p:ajax update="@form"/>
-            </p:selectBooleanButton>
-            <p:commandButton id="toggleLazyMode" value="Lazy Mode" update="@form" action="#{dataTable006.toggleLazyMode}"/>
-            <p:commandButton id="togglePaginator" value="Paginator" update="@form" action="#{dataTable006.togglePaginator}"/>
+				<p:commandButton
+					id="buttonUnselect"
+					value="Unselect"
+					update="@form"
+					action="#{dataTable006.unselectRows}"
+				/>
+			</h:form>
 
-            <p:commandButton id="buttonUnselect" value="Unselect" update="@form" action="#{dataTable006.unselectRows}"/>
-        </h:form>
-
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

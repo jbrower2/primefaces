@@ -1,32 +1,45 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:messages id="msgs" showDetail="true">
-                <p:autoUpdate/>
-            </p:messages>
+			<h:form id="form">
+				<p:messages id="msgs" showDetail="true">
+					<p:autoUpdate />
+				</p:messages>
 
-            <p:dataTable id="datatable" value="#{dataTable024.entries}" filteredValue="#{dataTable024.filteredEntries}" var="entry">
-                <p:column field="id" />
-                <p:column field="name1" />
-                <p:column field="name2" />
-                <p:column>
-                    <p:commandButton id="select" process="@this" update="@none" actionListener="#{dataTable024.doSomething(entry)}" value="Action" />
-                </p:column>
-            </p:dataTable>
-        </h:form>
+				<p:dataTable
+					id="datatable"
+					value="#{dataTable024.entries}"
+					filteredValue="#{dataTable024.filteredEntries}"
+					var="entry"
+				>
+					<p:column field="id" />
+					<p:column field="name1" />
+					<p:column field="name2" />
+					<p:column>
+						<p:commandButton
+							id="select"
+							process="@this"
+							update="@none"
+							actionListener="#{dataTable024.doSomething(entry)}"
+							value="Action"
+						/>
+					</p:column>
+				</p:dataTable>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

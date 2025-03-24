@@ -1,50 +1,76 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:messages id="msgs" showDetail="true">
-                <p:autoUpdate/>
-            </p:messages>
+			<h:form id="form">
+				<p:messages id="msgs" showDetail="true">
+					<p:autoUpdate />
+				</p:messages>
 
-            <p:dataTable id="datatable" widgetVar="datatable" value="#{dataTable002RowCountOtherImpl.lazyDataModel}" var="lang"
-                         paginator="true" rows="10" filterEvent="enter"
-                         selection="#{dataTable002RowCountOtherImpl.selectedProgrammingLanguage}">
-                <p:ajax event="rowSelect" listener="#{dataTable002RowCountOtherImpl.onRowSelect}"/>
+				<p:dataTable
+					id="datatable"
+					widgetVar="datatable"
+					value="#{dataTable002RowCountOtherImpl.lazyDataModel}"
+					var="lang"
+					paginator="true"
+					rows="10"
+					filterEvent="enter"
+					selection="#{dataTable002RowCountOtherImpl.selectedProgrammingLanguage}"
+				>
+					<p:ajax
+						event="rowSelect"
+						listener="#{dataTable002RowCountOtherImpl.onRowSelect}"
+					/>
 
-                <p:column field="id" headerText="ID"/>
+					<p:column field="id" headerText="ID" />
 
-                <p:column field="name" filterMatchMode="contains"/>
+					<p:column field="name" filterMatchMode="contains" />
 
-                <p:column field="firstAppeared" filterMatchMode="gte"/>
+					<p:column field="firstAppeared" filterMatchMode="gte" />
 
-                <p:column field="type" filterMatchMode="exact">
-                    <f:facet name="filter">
-                        <p:selectCheckboxMenu id="filterType" onchange="PF('datatable').filter()" multiple="true" updateLabel="true">
-                            <f:selectItems value="#{dataTable002RowCountOtherImpl.types}"/>
-                        </p:selectCheckboxMenu>
-                    </f:facet>
-                </p:column>
+					<p:column field="type" filterMatchMode="exact">
+						<f:facet name="filter">
+							<p:selectCheckboxMenu
+								id="filterType"
+								onchange="PF('datatable').filter()"
+								multiple="true"
+								updateLabel="true"
+							>
+								<f:selectItems value="#{dataTable002RowCountOtherImpl.types}" />
+							</p:selectCheckboxMenu>
+						</f:facet>
+					</p:column>
 
-                <p:column>
-                    <p:commandButton value="Delete" action="#{dataTable002RowCountOtherImpl.delete(lang)}" update="datatable" />
-                </p:column>
-            </p:dataTable>
+					<p:column>
+						<p:commandButton
+							value="Delete"
+							action="#{dataTable002RowCountOtherImpl.delete(lang)}"
+							update="datatable"
+						/>
+					</p:column>
+				</p:dataTable>
 
-            <p:commandButton id="buttonSubmit" value="Submit" update="@form" action="#{dataTable002RowCountOtherImpl.submit}"/>
-            <p:commandButton id="buttonUpdate" value="Update" update="datatable"/>
-        </h:form>
+				<p:commandButton
+					id="buttonSubmit"
+					value="Submit"
+					update="@form"
+					action="#{dataTable002RowCountOtherImpl.submit}"
+				/>
+				<p:commandButton id="buttonUpdate" value="Update" update="datatable" />
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

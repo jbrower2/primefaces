@@ -1,33 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:dataTable id="datatable" value="#{dataTable014.progLanguages}" var="lang" stickyHeader="true">
-                <p:column headerText="ID" sortBy="#{lang.id}">
-                    <h:outputText value="#{lang.id}" />
-                </p:column>
+			<h:form id="form">
+				<p:dataTable
+					id="datatable"
+					value="#{dataTable014.progLanguages}"
+					var="lang"
+					stickyHeader="true"
+				>
+					<p:column headerText="ID" sortBy="#{lang.id}">
+						<h:outputText value="#{lang.id}" />
+					</p:column>
 
-                <p:column headerText="Name" sortBy="#{lang.name}">
-                    <h:outputText value="#{lang.name}" />
-                </p:column>
+					<p:column headerText="Name" sortBy="#{lang.name}">
+						<h:outputText value="#{lang.name}" />
+					</p:column>
 
-                <p:column headerText="First appeared" sortBy="#{lang.firstAppeared}">
-                    <h:outputText value="#{lang.firstAppeared}" />
-                </p:column>
-            </p:dataTable>
-        </h:form>
+					<p:column headerText="First appeared" sortBy="#{lang.firstAppeared}">
+						<h:outputText value="#{lang.firstAppeared}" />
+					</p:column>
+				</p:dataTable>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

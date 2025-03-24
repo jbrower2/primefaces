@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head id="head">
-         <f:facet name="first">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        </f:facet>
-        <f:facet name="last">
-            <meta name="apple-mobile-web-app-capable" content="yes"/>
-        </f:facet>
-        <title>PrimeFaces Selenium</title>
-    </h:head>
-    <h:body>
-        <h:form id="form">
-            <p:chart style="width: 100%; height: 500px;"> <!-- was loading moment.js twice on page load-->
-                <f:facet name="value">
-                {
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head id="head">
+			<f:facet name="first">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			</f:facet>
+			<f:facet name="last">
+				<meta name="apple-mobile-web-app-capable" content="yes" />
+			</f:facet>
+			<title>PrimeFaces Selenium</title>
+		</h:head>
+		<h:body>
+			<h:form id="form">
+				<p:chart style="width: 100%; height: 500px;">
+					<!-- was loading moment.js twice on page load-->
+					<f:facet name="value">
+						{
                   type: 'bar',
                   data: {
                     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -37,10 +40,10 @@
                     }
                   }
                 }
-                </f:facet>
-     </p:chart>
-        </h:form>
-    </h:body>
-</f:view>
+					</f:facet>
+				</p:chart>
+			</h:form>
+		</h:body>
+	</f:view>
 
 </html>

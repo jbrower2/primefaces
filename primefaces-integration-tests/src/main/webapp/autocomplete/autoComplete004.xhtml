@@ -1,29 +1,44 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <!-- #6711 AJAX change event in CSP and non CSP mode -->
-            <p:autoComplete id="autocomplete" value="#{autoComplete004.value}" queryEvent="keyup" queryDelay="0">
-                <p:ajax event="change" update="output" listener="#{autoComplete004.onAjax}"/>
-                <p:ajax event="clear" update="output" listener="#{autoComplete004.onAjax}"/>
-            </p:autoComplete>
+			<h:form id="form">
+				<!-- #6711 AJAX change event in CSP and non CSP mode -->
+				<p:autoComplete
+					id="autocomplete"
+					value="#{autoComplete004.value}"
+					queryEvent="keyup"
+					queryDelay="0"
+				>
+					<p:ajax
+						event="change"
+						update="output"
+						listener="#{autoComplete004.onAjax}"
+					/>
+					<p:ajax
+						event="clear"
+						update="output"
+						listener="#{autoComplete004.onAjax}"
+					/>
+				</p:autoComplete>
 
-            <h:outputText id="output" value="#{autoComplete004.value}" />
-            <br/>
-            <p:inputText id="focus" />
-        </h:form>
+				<h:outputText id="output" value="#{autoComplete004.value}" />
+				<br />
+				<p:inputText id="focus" />
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

@@ -1,40 +1,64 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:dataTable id="datatable" value="#{dataTable018.dataModel}" var="lang" paginator="true" rows="3"
-                         filteredValue="#{dataTable018.filteredProgLanguages}" filterEvent="enter"
-                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                         rowsPerPageTemplate="2,3,5,10">
-                <p:column headerText="ID" sortBy="#{lang.id}">
-                    <h:outputText value="#{lang.id}"/>
-                </p:column>
+			<h:form id="form">
+				<p:dataTable
+					id="datatable"
+					value="#{dataTable018.dataModel}"
+					var="lang"
+					paginator="true"
+					rows="3"
+					filteredValue="#{dataTable018.filteredProgLanguages}"
+					filterEvent="enter"
+					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="2,3,5,10"
+				>
+					<p:column headerText="ID" sortBy="#{lang.id}">
+						<h:outputText value="#{lang.id}" />
+					</p:column>
 
-                <p:column headerText="Name" sortBy="#{lang.name}" filterBy="#{lang.name}" filterMatchMode="contains">
-                    <h:outputText value="#{lang.name}"/>
-                </p:column>
+					<p:column
+						headerText="Name"
+						sortBy="#{lang.name}"
+						filterBy="#{lang.name}"
+						filterMatchMode="contains"
+					>
+						<h:outputText value="#{lang.name}" />
+					</p:column>
 
-                <p:column headerText="First appeared" sortBy="#{lang.firstAppeared}" filterBy="#{lang.firstAppeared}" filterMatchMode="gte">
-                    <h:outputText value="#{lang.firstAppeared}"/>
-                </p:column>
-            </p:dataTable>
+					<p:column
+						headerText="First appeared"
+						sortBy="#{lang.firstAppeared}"
+						filterBy="#{lang.firstAppeared}"
+						filterMatchMode="gte"
+					>
+						<h:outputText value="#{lang.firstAppeared}" />
+					</p:column>
+				</p:dataTable>
 
-            <p:commandButton id="button" value="Submit" update="@form"/>
-            <p:commandButton id="buttonUpdate" value="Update" update="datatable"/>
-            <p:commandButton id="buttonResetTable" value="reset table" update="@form" action="#{dataTable018.resetTable()}"/>
-        </h:form>
+				<p:commandButton id="button" value="Submit" update="@form" />
+				<p:commandButton id="buttonUpdate" value="Update" update="datatable" />
+				<p:commandButton
+					id="buttonResetTable"
+					value="reset table"
+					update="@form"
+					action="#{dataTable018.resetTable()}"
+				/>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

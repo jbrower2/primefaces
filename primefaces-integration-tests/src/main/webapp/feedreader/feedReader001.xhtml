@@ -1,32 +1,50 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:commandButton id="buttonInvalidate" update="@form" value="Invalidate" actionListener="#{feedReader001.invalidate}"/>
+			<h:form id="form">
+				<p:commandButton
+					id="buttonInvalidate"
+					update="@form"
+					value="Invalidate"
+					actionListener="#{feedReader001.invalidate}"
+				/>
 
-            <p:feedReader value="#{feedReader001.current}" var="feed" id="feedReader">
-                <div class="p-p-3">
-                    <h:outputText value="#{feed.title}" styleClass="p-text-bold p-d-block ui-rss-feed" />
-                    <h:outputText value="#{feed.description}" escape="false"/>
-                </div>
+				<p:feedReader
+					value="#{feedReader001.current}"
+					var="feed"
+					id="feedReader"
+				>
+					<div class="p-p-3">
+						<h:outputText
+							value="#{feed.title}"
+							styleClass="p-text-bold p-d-block ui-rss-feed"
+						/>
+						<h:outputText value="#{feed.description}" escape="false" />
+					</div>
 
-                <f:facet name="error">
-                    <h:outputText value="Error reading RSS Feed!!!" style="color:red;" styleClass="ui-feed-error"/>
-                </f:facet>
-            </p:feedReader>
-        </h:form>
+					<f:facet name="error">
+						<h:outputText
+							value="Error reading RSS Feed!!!"
+							style="color:red;"
+							styleClass="ui-feed-error"
+						/>
+					</f:facet>
+				</p:feedReader>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

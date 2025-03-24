@@ -1,37 +1,48 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:commandButton id="button" update="@form" process="@form" value="save" />
+			<h:form id="form">
+				<p:commandButton
+					id="button"
+					update="@form"
+					process="@form"
+					value="save"
+				/>
 
-            <p:messages id="msgs">
-                <p:autoUpdate />
-            </p:messages>
+				<p:messages id="msgs">
+					<p:autoUpdate />
+				</p:messages>
 
-            <p:tabView id="tabview" dynamic="true">
-                <p:tab id="tab0" title="First Tab">
-                    <p:selectOneMenu id="selectonemenu" required="true" value="#{tabView004.value}">
-                        <f:selectItems value="#{tabView004.values}" />
-                    </p:selectOneMenu>
-                </p:tab>
+				<p:tabView id="tabview" dynamic="true">
+					<p:tab id="tab0" title="First Tab">
+						<p:selectOneMenu
+							id="selectonemenu"
+							required="true"
+							value="#{tabView004.value}"
+						>
+							<f:selectItems value="#{tabView004.values}" />
+						</p:selectOneMenu>
+					</p:tab>
 
-                <p:tab id="tab1" title="Second Tab">
-                    <h:outputText id="second" value="second" />
-                </p:tab>
-            </p:tabView>
-        </h:form>
+					<p:tab id="tab1" title="Second Tab">
+						<h:outputText id="second" value="second" />
+					</p:tab>
+				</p:tabView>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

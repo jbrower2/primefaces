@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:datePicker id="datepicker" value="02.06.2021"
-                          mindate="27.05.2021" maxdate="10.06.2021" pattern="dd.MM.yyyy"/>
-                          
-            <!-- GitHub #8912 default view date with no value should be October 2021 not NOW -->
-            <p:datePicker id="maxdate" maxdate="17.10.2021" pattern="dd.MM.yyyy"/>
-            
-            <!-- GitHub #8912 default view date with no value should be August 2034 not NOW -->
-            <p:datePicker id="mindate" mindate="08.08.2034" pattern="dd.MM.yyyy"/>
-        </h:form>
+			<h:form id="form">
+				<p:datePicker
+					id="datepicker"
+					value="02.06.2021"
+					mindate="27.05.2021"
+					maxdate="10.06.2021"
+					pattern="dd.MM.yyyy"
+				/>
 
-    </h:body>
-</f:view>
+				<!-- GitHub #8912 default view date with no value should be October 2021 not NOW -->
+				<p:datePicker id="maxdate" maxdate="17.10.2021" pattern="dd.MM.yyyy" />
+
+				<!-- GitHub #8912 default view date with no value should be August 2034 not NOW -->
+				<p:datePicker id="mindate" mindate="08.08.2034" pattern="dd.MM.yyyy" />
+			</h:form>
+
+		</h:body>
+	</f:view>
 
 </html>

@@ -1,44 +1,57 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:messages id="msgs" showDetail="true">
-                <p:autoUpdate/>
-            </p:messages>
+			<h:form id="form">
+				<p:messages id="msgs" showDetail="true">
+					<p:autoUpdate />
+				</p:messages>
 
-            <p:treeTable id="treeTable" value="#{treeTable005.root}" var="document" selectionMode="checkbox"
-                         selection="#{treeTable005.selectedNodes}">
-                <f:facet name="header">
-                    File System
-                </f:facet>
-                <p:column headerText="Name" sortBy="#{document.name}"
-                          filterBy="#{document.name}" filterMatchMode="contains">
-                    <h:outputText value="#{document.name}" />
-                </p:column>
-                <p:column headerText="Size">
-                    <h:outputText value="#{document.size}" />
-                </p:column>
-                <p:column headerText="Type">
-                    <h:outputText value="#{document.type}" />
-                </p:column>
-            </p:treeTable>
+				<p:treeTable
+					id="treeTable"
+					value="#{treeTable005.root}"
+					var="document"
+					selectionMode="checkbox"
+					selection="#{treeTable005.selectedNodes}"
+				>
+					<f:facet name="header">File System</f:facet>
+					<p:column
+						headerText="Name"
+						sortBy="#{document.name}"
+						filterBy="#{document.name}"
+						filterMatchMode="contains"
+					>
+						<h:outputText value="#{document.name}" />
+					</p:column>
+					<p:column headerText="Size">
+						<h:outputText value="#{document.size}" />
+					</p:column>
+					<p:column headerText="Type">
+						<h:outputText value="#{document.type}" />
+					</p:column>
+				</p:treeTable>
 
-            <p:commandButton id="populate" value="Populate Tree Table"
-                             process="@this" update="treeTable"
-                             actionListener="#{treeTable005.populateRoot()}" />
-        </h:form>
+				<p:commandButton
+					id="populate"
+					value="Populate Tree Table"
+					process="@this"
+					update="treeTable"
+					actionListener="#{treeTable005.populateRoot()}"
+				/>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

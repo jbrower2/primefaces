@@ -1,29 +1,39 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:sidebar id="sidebar1" widgetVar="sidebar1">
-                sidebar1 content
-            </p:sidebar>
-            <p:button id="button1" onclick="PF('sidebar1').show(); return false" value="Show sidebar1" />
-            
-            <p:sidebar id="sidebar2" widgetVar="sidebar2" dynamic="true">
-                sidebar2 content
-            </p:sidebar>
-            <p:button id="button2" onclick="PF('sidebar2').show(); return false" value="Show sidebar2" />
-        </h:form>
+			<h:form id="form">
+				<p:sidebar id="sidebar1" widgetVar="sidebar1">
+					sidebar1 content
+				</p:sidebar>
+				<p:button
+					id="button1"
+					onclick="PF('sidebar1').show(); return false"
+					value="Show sidebar1"
+				/>
 
-    </h:body>
-</f:view>
+				<p:sidebar id="sidebar2" widgetVar="sidebar2" dynamic="true">
+					sidebar2 content
+				</p:sidebar>
+				<p:button
+					id="button2"
+					onclick="PF('sidebar2').show(); return false"
+					value="Show sidebar2"
+				/>
+			</h:form>
+
+		</h:body>
+	</f:view>
 
 </html>

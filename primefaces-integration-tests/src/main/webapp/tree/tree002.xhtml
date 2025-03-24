@@ -1,32 +1,54 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="jakarta.faces.html"
-    xmlns:f="jakarta.faces.core" xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
-        <h:form id="form">
-            <p:messages id="msgs" showDetail="true">
-                <p:autoUpdate />
-            </p:messages>
+		<h:body>
+			<h:form id="form">
+				<p:messages id="msgs" showDetail="true">
+					<p:autoUpdate />
+				</p:messages>
 
-            <p:tree id="tree" value="#{tree002.root}" var="document" widgetVar="tree" selectionMode="single"
-                selection="#{tree002.selectedNode}">
-                <p:ajax event="select" update=":form:msgs" listener="#{tree002.onNodeSelect}" />
-                <p:ajax event="unselect" update=":form:msgs" listener="#{tree002.onNodeUnselect}" />
+				<p:tree
+					id="tree"
+					value="#{tree002.root}"
+					var="document"
+					widgetVar="tree"
+					selectionMode="single"
+					selection="#{tree002.selectedNode}"
+				>
+					<p:ajax
+						event="select"
+						update=":form:msgs"
+						listener="#{tree002.onNodeSelect}"
+					/>
+					<p:ajax
+						event="unselect"
+						update=":form:msgs"
+						listener="#{tree002.onNodeUnselect}"
+					/>
 
-                <p:treeNode>
-                    <h:outputText value="#{document}" />
-                </p:treeNode>
-            </p:tree>
+					<p:treeNode>
+						<h:outputText value="#{document}" />
+					</p:treeNode>
+				</p:tree>
 
-            <p:commandButton id="buttonShowSelectedNode" value="Show selected nodes" action="#{tree002.showSelectedNode}" />
-        </h:form>
+				<p:commandButton
+					id="buttonShowSelectedNode"
+					value="Show selected nodes"
+					action="#{tree002.showSelectedNode}"
+				/>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

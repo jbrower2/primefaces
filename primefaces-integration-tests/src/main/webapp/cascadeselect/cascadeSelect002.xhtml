@@ -1,30 +1,45 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:messages id="msgs" showDetail="true">
-                <p:autoUpdate/>
-            </p:messages>
+			<h:form id="form">
+				<p:messages id="msgs" showDetail="true">
+					<p:autoUpdate />
+				</p:messages>
 
-            <p:cascadeSelect id="cascadeSelect" value="#{cascadeSelect002.selectedGpu}" placeholder="Select a GPU">
-                <f:selectItems value="#{cascadeSelect002.gpus}"/>
-                <p:ajax event="itemSelect" process="@this" listener="#{cascadeSelect002.onItemSelect}"/>
-            </p:cascadeSelect>
+				<p:cascadeSelect
+					id="cascadeSelect"
+					value="#{cascadeSelect002.selectedGpu}"
+					placeholder="Select a GPU"
+				>
+					<f:selectItems value="#{cascadeSelect002.gpus}" />
+					<p:ajax
+						event="itemSelect"
+						process="@this"
+						listener="#{cascadeSelect002.onItemSelect}"
+					/>
+				</p:cascadeSelect>
 
-            <p:commandButton id="button" action="#{cascadeSelect002.submit}" update="@form" value="Submit"/>
-        </h:form>
+				<p:commandButton
+					id="button"
+					action="#{cascadeSelect002.submit}"
+					update="@form"
+					value="Submit"
+				/>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

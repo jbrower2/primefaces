@@ -1,34 +1,55 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:dataTable id="datatable" value="#{dataTable017.progLanguages}" var="lang" filteredValue="#{dataTable017.filteredProgLanguages}">
-                <p:column headerText="Type" groupRow="true" sortBy="#{lang.type}">
-                    <h:outputText value="#{lang.type}"/>
-                </p:column>
+			<h:form id="form">
+				<p:dataTable
+					id="datatable"
+					value="#{dataTable017.progLanguages}"
+					var="lang"
+					filteredValue="#{dataTable017.filteredProgLanguages}"
+				>
+					<p:column headerText="Type" groupRow="true" sortBy="#{lang.type}">
+						<h:outputText value="#{lang.type}" />
+					</p:column>
 
-                <p:column field="id" headerText="ID" filterable="false"/>
-                <p:column field="name" headerText="Name" filterMatchMode="contains"/>
-                <p:column field="firstAppeared" headerText="First appeared" filterMatchMode="gte"/>
-                <p:column field="type" headerText="Type" filterable="false" sortable="false"/>
-            </p:dataTable>
+					<p:column field="id" headerText="ID" filterable="false" />
+					<p:column field="name" headerText="Name" filterMatchMode="contains" />
+					<p:column
+						field="firstAppeared"
+						headerText="First appeared"
+						filterMatchMode="gte"
+					/>
+					<p:column
+						field="type"
+						headerText="Type"
+						filterable="false"
+						sortable="false"
+					/>
+				</p:dataTable>
 
-            <p:commandButton id="button" value="Submit" update="@form"/>
-            <p:commandButton id="buttonUpdate" value="Update" update="datatable"/>
-            <p:commandButton id="buttonResetTable" value="reset table" update="@form" action="#{dataTable017.resetTable()}"/>
-        </h:form>
+				<p:commandButton id="button" value="Submit" update="@form" />
+				<p:commandButton id="buttonUpdate" value="Update" update="datatable" />
+				<p:commandButton
+					id="buttonResetTable"
+					value="reset table"
+					update="@form"
+					action="#{dataTable017.resetTable()}"
+				/>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

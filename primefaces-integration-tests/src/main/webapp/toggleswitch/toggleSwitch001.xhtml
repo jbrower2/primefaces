@@ -1,29 +1,36 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
-        <h:form id="form">
-            <p:messages id="msgs" showDetail="true">
-                <p:autoUpdate/>
-            </p:messages>
+		<h:body>
+			<h:form id="form">
+				<p:messages id="msgs" showDetail="true">
+					<p:autoUpdate />
+				</p:messages>
 
-            <p:outputLabel id="label" for="@next" value="Click Me"/>
-            <p:toggleSwitch id="toggleSwitch" value="#{toggleSwitch001.value}">
-                <p:ajax listener="#{toggleSwitch001.addMessage}" update="@form"/>
-            </p:toggleSwitch>
+				<p:outputLabel id="label" for="@next" value="Click Me" />
+				<p:toggleSwitch id="toggleSwitch" value="#{toggleSwitch001.value}">
+					<p:ajax listener="#{toggleSwitch001.addMessage}" update="@form" />
+				</p:toggleSwitch>
 
-            <p:commandButton id="submit" update="@form" value="Submit" actionListener="#{toggleSwitch001.addMessage}"/>
-        </h:form>
+				<p:commandButton
+					id="submit"
+					update="@form"
+					value="Submit"
+					actionListener="#{toggleSwitch001.addMessage}"
+				/>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

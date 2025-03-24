@@ -1,36 +1,51 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:messages id="msgs" showDetail="true">
-                <p:autoUpdate/>
-            </p:messages>
+			<h:form id="form">
+				<p:messages id="msgs" showDetail="true">
+					<p:autoUpdate />
+				</p:messages>
 
-            <p:timeline id="timeline" value="#{timeline003.model}" height="250px"
-                        selectable="true"
-                        zoomable="true"
-                        moveable="true"
-                        stackEvents="true"
-                        axisOnTop="true"
-                        showCurrentTime="true"
-                        locale="#{timeline003.locale}">
-            </p:timeline>
+				<p:timeline
+					id="timeline"
+					value="#{timeline003.model}"
+					height="250px"
+					selectable="true"
+					zoomable="true"
+					moveable="true"
+					stackEvents="true"
+					axisOnTop="true"
+					showCurrentTime="true"
+					locale="#{timeline003.locale}"
+				/>
 
-            <p:commandButton id="btnEnglish" update="@form" value="English" actionListener="#{timeline003.english}"/>
-            <p:commandButton id="btnFrench" update="@form" value="French" actionListener="#{timeline003.french}"/>
-        </h:form>
+				<p:commandButton
+					id="btnEnglish"
+					update="@form"
+					value="English"
+					actionListener="#{timeline003.english}"
+				/>
+				<p:commandButton
+					id="btnFrench"
+					update="@form"
+					value="French"
+					actionListener="#{timeline003.french}"
+				/>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

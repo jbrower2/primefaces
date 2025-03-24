@@ -1,13 +1,16 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="jakarta.faces.facelets"
-                xmlns:h="jakarta.faces.html"
-                xmlns:f="jakarta.faces.core"
-                xmlns:p="primefaces"
-                template="/WEB-INF/template.xhtml">
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+	template="/WEB-INF/template.xhtml"
+>
 
-    <ui:define name="head">
-        <script>
-            //<![CDATA[
+	<ui:define name="head">
+		<script>
+			//
+			<![CDATA[
             /**
              * Faces Validator
              */
@@ -48,52 +51,66 @@
                 }
             };
             //]]>
-        </script>
-    </ui:define>
+		</script>
+	</ui:define>
 
-    <ui:define name="title">
-        Client Side Validation <span class="subitem">Custom</span>
-    </ui:define>
+	<ui:define name="title">
+		Client Side Validation
+		<span class="subitem">Custom</span>
+	</ui:define>
 
-    <ui:define name="description">
-        A custom client converter or a validator can be implemented easily. Both Jakarta Faces and Bean Validation APIs are supported.
-    </ui:define>
+	<ui:define name="description">
+		A custom client converter or a validator can be implemented easily. Both Jakarta Faces and Bean Validation APIs are supported.
+	</ui:define>
 
-    <ui:param name="documentationLink" value="/core/csvJavascriptAPI"/>
-    <ui:param name="primefacesClientApiLink" value="interfaces/src_PrimeFaces.PrimeFaces.Validator.html" />
+	<ui:param name="documentationLink" value="/core/csvJavascriptAPI" />
+	<ui:param
+		name="primefacesClientApiLink"
+		value="interfaces/src_PrimeFaces.PrimeFaces.Validator.html"
+	/>
 
-    <ui:define name="implementation">
-        <div class="card">
-            <h:form>
-                <p:growl showDetail="true"/>
+	<ui:define name="implementation">
+		<div class="card">
+			<h:form>
+				<p:growl showDetail="true" />
 
-                <h:panelGrid columns="4" cellpadding="7">
-                    <p:outputLabel for="email1" value="Email 1: (Faces Validation)"/>
-                    <p:inputText id="email1" value="#{customValidationView.text}">
-                        <f:validator validatorId="custom.emailValidator"/>
-                    </p:inputText>
-                    <p:message for="email1" display="tooltip"/>
-                    <h:outputText value="#{customValidationView.text}"/>
+				<h:panelGrid columns="4" cellpadding="7">
+					<p:outputLabel for="email1" value="Email 1: (Faces Validation)" />
+					<p:inputText id="email1" value="#{customValidationView.text}">
+						<f:validator validatorId="custom.emailValidator" />
+					</p:inputText>
+					<p:message for="email1" display="tooltip" />
+					<h:outputText value="#{customValidationView.text}" />
 
-                    <p:outputLabel for="email2" value="Email 2: (Bean Validation)"/>
-                    <p:inputText id="email2" value="#{customValidationView.email}"/>
-                    <p:message for="email2" display="tooltip"/>
-                    <h:outputText value="#{customValidationView.email}"/>
-                </h:panelGrid>
-                
-                <p:commandButton value="Save" ajax="false" icon="pi pi-check" validateClient="true" styleClass="mt-3" />
-            </h:form>
-        </div>
-    </ui:define>
+					<p:outputLabel for="email2" value="Email 2: (Bean Validation)" />
+					<p:inputText id="email2" value="#{customValidationView.email}" />
+					<p:message for="email2" display="tooltip" />
+					<h:outputText value="#{customValidationView.email}" />
+				</h:panelGrid>
 
-    <ui:define name="more-source-tabs">
-        <p:tab title="/org/primefaces/showcase/view/csv/EmailValidator.java"/>
+				<p:commandButton
+					value="Save"
+					ajax="false"
+					icon="pi pi-check"
+					validateClient="true"
+					styleClass="mt-3"
+				/>
+			</h:form>
+		</div>
+	</ui:define>
 
-        <p:tab title="/org/primefaces/showcase/view/csv/Email.java"/>
+	<ui:define name="more-source-tabs">
+		<p:tab title="/org/primefaces/showcase/view/csv/EmailValidator.java" />
 
-        <p:tab title="/org/primefaces/showcase/view/csv/EmailConstraintValidator.java"/>
+		<p:tab title="/org/primefaces/showcase/view/csv/Email.java" />
 
-        <p:tab title="/org/primefaces/showcase/view/csv/EmailClientValidationConstraint.java"/>
-    </ui:define>
+		<p:tab
+			title="/org/primefaces/showcase/view/csv/EmailConstraintValidator.java"
+		/>
+
+		<p:tab
+			title="/org/primefaces/showcase/view/csv/EmailClientValidationConstraint.java"
+		/>
+	</ui:define>
 
 </ui:composition>

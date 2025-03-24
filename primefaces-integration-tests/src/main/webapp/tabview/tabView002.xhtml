@@ -1,36 +1,41 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:tabView id="tabview" dynamic="true">
-                <p:tab title="Tab1">
-                    Dummy-Content 1<br/>
-                    <p:inputText id="inputtext1" value="#{tabView002.value1}" />
-                </p:tab>
-                <p:tab title="Tab2">
-                    Dummy-Content 2<br/>
-                    <p:inputText id="inputtext2" value="#{tabView002.value2}" />
-                </p:tab>
-                <p:tab title="Tab3">
-                    Dummy-Content 3<br/>
-                    <p:inputText id="inputtext3" value="#{tabView002.value3}" />
-                </p:tab>
-            </p:tabView>
+			<h:form id="form">
+				<p:tabView id="tabview" dynamic="true">
+					<p:tab title="Tab1">
+						Dummy-Content 1
+						<br />
+						<p:inputText id="inputtext1" value="#{tabView002.value1}" />
+					</p:tab>
+					<p:tab title="Tab2">
+						Dummy-Content 2
+						<br />
+						<p:inputText id="inputtext2" value="#{tabView002.value2}" />
+					</p:tab>
+					<p:tab title="Tab3">
+						Dummy-Content 3
+						<br />
+						<p:inputText id="inputtext3" value="#{tabView002.value3}" />
+					</p:tab>
+				</p:tabView>
 
-            <p:commandButton id="button" value="Submit" update="@form"/>
-        </h:form>
+				<p:commandButton id="button" value="Submit" update="@form" />
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

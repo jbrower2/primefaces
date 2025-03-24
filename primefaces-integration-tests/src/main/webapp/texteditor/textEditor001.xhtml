@@ -1,43 +1,47 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:textEditor id="editor"
-                          widgetVar="wgtEditor"
-                          value="#{textEditor001.value}"
-                          secure="false"
-                          height="300"
-                          style="margin-bottom:10px"
-                          placeholder="Enter your content">
-                <f:facet name="toolbar">
-                    <span class="ql-formats">
-                        <button class="ql-bold"></button>
-                        <button class="ql-italic"></button>
-                        <button class="ql-underline"></button>
-                        <button class="ql-strike"></button>
-                    </span>
-                    <span class="ql-formats">
-                         <select class="ql-font"></select>
-                        <select class="ql-size"></select>
-                     </span>
-                </f:facet>
-                <p:ajax process="@this"/>
-            </p:textEditor>
+			<h:form id="form">
+				<p:textEditor
+					id="editor"
+					widgetVar="wgtEditor"
+					value="#{textEditor001.value}"
+					secure="false"
+					height="300"
+					style="margin-bottom:10px"
+					placeholder="Enter your content"
+				>
+					<f:facet name="toolbar">
+						<span class="ql-formats">
+							<button class="ql-bold" />
+							<button class="ql-italic" />
+							<button class="ql-underline" />
+							<button class="ql-strike" />
+						</span>
+						<span class="ql-formats">
+							<select class="ql-font" />
+							<select class="ql-size" />
+						</span>
+					</f:facet>
+					<p:ajax process="@this" />
+				</p:textEditor>
 
-            <p:commandButton id="button" update="@form" value="Submit"/>
-        </h:form>
+				<p:commandButton id="button" update="@form" value="Submit" />
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

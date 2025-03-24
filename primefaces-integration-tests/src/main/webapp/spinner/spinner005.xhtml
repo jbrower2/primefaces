@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces"
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
 >
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <!-- GitHub #6521: new 'round' attribute -->
-            <p:spinner id="integer" value="#{spinner001.integer}" min="0" max="1200" stepFactor="5" round="true"/>
+			<h:form id="form">
+				<!-- GitHub #6521: new 'round' attribute -->
+				<p:spinner
+					id="integer"
+					value="#{spinner001.integer}"
+					min="0"
+					max="1200"
+					stepFactor="5"
+					round="true"
+				/>
 
-            <p:commandButton id="button" update="@form" value="Submit"/>
-        </h:form>
+				<p:commandButton id="button" update="@form" value="Submit" />
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

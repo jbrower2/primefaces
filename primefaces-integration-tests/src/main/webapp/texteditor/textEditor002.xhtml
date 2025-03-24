@@ -1,30 +1,36 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
-        <!-- Prevent regression of GitHub #2802 when upgrading QuillJS: https://github.com/primefaces/primefaces/issues/2802 -->
-        <h:form id="form">
-            <p:commandButton id="updateForm" update="@form" value="Click me first"/>
+		<h:body>
+			<!-- Prevent regression of GitHub #2802 when upgrading QuillJS: https://github.com/primefaces/primefaces/issues/2802 -->
+			<h:form id="form">
+				<p:commandButton
+					id="updateForm"
+					update="@form"
+					value="Click me first"
+				/>
 
-            <p:accordionPanel id="accordion">
-                <p:tab title="Tab1">
-                    <p:textEditor secure="false"></p:textEditor>
-                </p:tab>
-                <p:tab title="Tab2">
-                    <p:textEditor secure="false"></p:textEditor>
-                </p:tab>
-            </p:accordionPanel>
-        </h:form>
+				<p:accordionPanel id="accordion">
+					<p:tab title="Tab1">
+						<p:textEditor secure="false" />
+					</p:tab>
+					<p:tab title="Tab2">
+						<p:textEditor secure="false" />
+					</p:tab>
+				</p:accordionPanel>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

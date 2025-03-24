@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:inputMask id="optional" value="#{inputMask001.optional}" mask="9[999]" size="4" autoClear="false"/>
+			<h:form id="form">
+				<p:inputMask
+					id="optional"
+					value="#{inputMask001.optional}"
+					mask="9[999]"
+					size="4"
+					autoClear="false"
+				/>
 
-            <p:commandButton id="button" update="@form" value="Submit"/>
-        </h:form>
+				<p:commandButton id="button" update="@form" value="Submit" />
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

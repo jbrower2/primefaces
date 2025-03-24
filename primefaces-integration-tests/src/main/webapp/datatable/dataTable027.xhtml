@@ -1,36 +1,52 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:messages id="msgs" showDetail="true">
-                <p:autoUpdate/>
-            </p:messages>
+			<h:form id="form">
+				<p:messages id="msgs" showDetail="true">
+					<p:autoUpdate />
+				</p:messages>
 
-            <p:outputLabel id="lblBefore" value="#{dataTable027.lazyDataModel.rowCount}" />
-            <p:dataTable id="datatable" value="#{dataTable027.lazyDataModel}" var="lang" scrollRows="2" scrollable="true"
-                     virtualScroll="true" scrollHeight="200" rows="2">
+				<p:outputLabel
+					id="lblBefore"
+					value="#{dataTable027.lazyDataModel.rowCount}"
+				/>
+				<p:dataTable
+					id="datatable"
+					value="#{dataTable027.lazyDataModel}"
+					var="lang"
+					scrollRows="2"
+					scrollable="true"
+					virtualScroll="true"
+					scrollHeight="200"
+					rows="2"
+				>
 
-                <p:column field="id" headerText="ID"/>
+					<p:column field="id" headerText="ID" />
 
-                <p:column field="name" filterMatchMode="contains"/>
+					<p:column field="name" filterMatchMode="contains" />
 
-                <p:column field="firstAppeared" filterMatchMode="gte"/>
+					<p:column field="firstAppeared" filterMatchMode="gte" />
 
-            </p:dataTable>
-            <p:outputLabel id="lblAfter" value="#{dataTable027.lazyDataModel.rowCount}" />
-        </h:form>
+				</p:dataTable>
+				<p:outputLabel
+					id="lblAfter"
+					value="#{dataTable027.lazyDataModel.rowCount}"
+				/>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

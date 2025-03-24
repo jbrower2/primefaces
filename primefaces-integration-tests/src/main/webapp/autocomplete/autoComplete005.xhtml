@@ -1,44 +1,84 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:messages id="msgs" showDetail="true">
-                <p:autoUpdate/>
-            </p:messages>
-            
-            <p:commandButton id="btnForce" update="@form" value="Force" actionListener="#{autoComplete005.force}"/>
-            <p:commandButton id="btnUnforce" update="@form" value="Unforce" actionListener="#{autoComplete005.unforce}"/>
-            <p:commandButton id="btnAutoSelect" update="@form" value="Auto-Select" actionListener="#{autoComplete005.autoSelect}"/>
-            <p:commandButton id="btnUnAutoSelect" update="@form" value="UnAuto-Select" actionListener="#{autoComplete005.unAutoSelect}"/>
+			<h:form id="form">
+				<p:messages id="msgs" showDetail="true">
+					<p:autoUpdate />
+				</p:messages>
 
-            <p:autoComplete id="autocompleteMultiple"
-                            value="#{autoComplete005.selectedDrivers}" completeMethod="#{autoComplete005.completeDriver}"
-                            var="driver" itemLabel="#{driver.name}" itemValue="#{driver}"
-                            multiple="true" forceSelection="#{autoComplete005.forceSelection}"
-                            autoSelection="true" showEmptyMessage="false"
-                            converter="realDriverConverter" />
-                            
-            <p:autoComplete id="autocompleteSingle"
-                            value="#{autoComplete005.selectedDriver}" completeMethod="#{autoComplete005.completeDriver}"
-                            var="driver" itemLabel="#{driver.name}" itemValue="#{driver}"
-                            multiple="false" forceSelection="true"
-                            autoSelection="false"
-                            converter="realDriverConverter" />
+				<p:commandButton
+					id="btnForce"
+					update="@form"
+					value="Force"
+					actionListener="#{autoComplete005.force}"
+				/>
+				<p:commandButton
+					id="btnUnforce"
+					update="@form"
+					value="Unforce"
+					actionListener="#{autoComplete005.unforce}"
+				/>
+				<p:commandButton
+					id="btnAutoSelect"
+					update="@form"
+					value="Auto-Select"
+					actionListener="#{autoComplete005.autoSelect}"
+				/>
+				<p:commandButton
+					id="btnUnAutoSelect"
+					update="@form"
+					value="UnAuto-Select"
+					actionListener="#{autoComplete005.unAutoSelect}"
+				/>
 
-            <p:commandButton id="buttonSubmit" update="@form" value="Submit" action="#{autoComplete005.submit}"/>
-        </h:form>
+				<p:autoComplete
+					id="autocompleteMultiple"
+					value="#{autoComplete005.selectedDrivers}"
+					completeMethod="#{autoComplete005.completeDriver}"
+					var="driver"
+					itemLabel="#{driver.name}"
+					itemValue="#{driver}"
+					multiple="true"
+					forceSelection="#{autoComplete005.forceSelection}"
+					autoSelection="true"
+					showEmptyMessage="false"
+					converter="realDriverConverter"
+				/>
 
-    </h:body>
-</f:view>
+				<p:autoComplete
+					id="autocompleteSingle"
+					value="#{autoComplete005.selectedDriver}"
+					completeMethod="#{autoComplete005.completeDriver}"
+					var="driver"
+					itemLabel="#{driver.name}"
+					itemValue="#{driver}"
+					multiple="false"
+					forceSelection="true"
+					autoSelection="false"
+					converter="realDriverConverter"
+				/>
+
+				<p:commandButton
+					id="buttonSubmit"
+					update="@form"
+					value="Submit"
+					action="#{autoComplete005.submit}"
+				/>
+			</h:form>
+
+		</h:body>
+	</f:view>
 
 </html>

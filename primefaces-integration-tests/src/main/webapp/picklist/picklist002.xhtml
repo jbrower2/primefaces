@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="jakarta.faces.html" xmlns:f="jakarta.faces.core" xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
-        <script>
-            window.badData = {
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
+			<script>
+				window.badData = {
                 'babana': 'A banana',
                 'pear': 'ðŸ',
                 'boom': 'Megaton bomb',
@@ -55,27 +60,50 @@
                     targetSelect.appendChild(option(e[0], e[1]))
                 }
             }
-        </script>
-    </h:head>
+			</script>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form" style="width: 1000px">
-            <p:messages id="messages" showDetail="false" closable="true">
-                <p:autoUpdate />
-            </p:messages>
+			<h:form id="form" style="width: 1000px">
+				<p:messages id="messages" showDetail="false" closable="true">
+					<p:autoUpdate />
+				</p:messages>
 
-            <h5 style="margin-top: 0">DOM Tampering and Submit Disabled</h5>
-            <p:pickList id="pickListCities" value="#{pickList002.cities}" var="cities" itemLabel="#{cities}" itemValue="#{cities}" itemDisabled="#{cities eq 'Paris'}"/>
+				<h5 style="margin-top: 0">DOM Tampering and Submit Disabled</h5>
+				<p:pickList
+					id="pickListCities"
+					value="#{pickList002.cities}"
+					var="cities"
+					itemLabel="#{cities}"
+					itemValue="#{cities}"
+					itemDisabled="#{cities eq 'Paris'}"
+				/>
 
-            <p:commandButton id="btnTamper" value="Tamper With DOM" type="button" onclick="modifyPickListContent(window.badData); return false;" />
-            <p:commandButton id="btnDisabled" value="Set Disabled" type="button" onclick="$('.ui-state-disabled').removeClass('ui-state-disabled'); modifyPickListContent(window.disabledData); return false;" />
-            <p:commandButton id="btnSubmit" update="output" value="Submit" style="margin-top: 10px" actionListener="#{pickList002.selectCities}" />
+				<p:commandButton
+					id="btnTamper"
+					value="Tamper With DOM"
+					type="button"
+					onclick="modifyPickListContent(window.badData); return false;"
+				/>
+				<p:commandButton
+					id="btnDisabled"
+					value="Set Disabled"
+					type="button"
+					onclick="$('.ui-state-disabled').removeClass('ui-state-disabled'); modifyPickListContent(window.disabledData); return false;"
+				/>
+				<p:commandButton
+					id="btnSubmit"
+					update="output"
+					value="Submit"
+					style="margin-top: 10px"
+					actionListener="#{pickList002.selectCities}"
+				/>
 
-            <h:outputText id="output" value="#{pickList002.actualTargetCities}" />
-        </h:form>
+				<h:outputText id="output" value="#{pickList002.actualTargetCities}" />
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

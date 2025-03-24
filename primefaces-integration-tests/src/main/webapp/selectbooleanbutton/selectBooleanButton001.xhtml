@@ -1,41 +1,58 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
-        <h:form id="form">
-            <p:messages id="msgs" showDetail="true">
-                <p:autoUpdate/>
-            </p:messages>
+		<h:body>
+			<h:form id="form">
+				<p:messages id="msgs" showDetail="true">
+					<p:autoUpdate />
+				</p:messages>
 
-            <h5>Full Button</h5>
-            <p:selectBooleanButton id="selectBooleanButton" value="#{selectBooleanButton001.value}"
-                                   onLabel="Yes"
-                                   offLabel="No"
-                                   onIcon="pi pi-check"
-                                   offIcon="pi pi-times"
-                                   style="width:60px">
-                <p:ajax listener="#{selectBooleanButton001.addMessage}" update="@form"/>
-            </p:selectBooleanButton>
-            
-            <h5>Icon Only</h5>
-            <p:selectBooleanButton id="iconOnly" onIcon="pi pi-check" offIcon="pi pi-times" />
-            
-            <h5>Default Labels</h5>
-            <p:selectBooleanButton id="defaultLabels" />
+				<h5>Full Button</h5>
+				<p:selectBooleanButton
+					id="selectBooleanButton"
+					value="#{selectBooleanButton001.value}"
+					onLabel="Yes"
+					offLabel="No"
+					onIcon="pi pi-check"
+					offIcon="pi pi-times"
+					style="width:60px"
+				>
+					<p:ajax
+						listener="#{selectBooleanButton001.addMessage}"
+						update="@form"
+					/>
+				</p:selectBooleanButton>
 
-            <br/>
-            <p:commandButton id="submit" update="@form" value="Submit" actionListener="#{selectBooleanButton001.addMessage}"/>
-        </h:form>
+				<h5>Icon Only</h5>
+				<p:selectBooleanButton
+					id="iconOnly"
+					onIcon="pi pi-check"
+					offIcon="pi pi-times"
+				/>
 
-    </h:body>
-</f:view>
+				<h5>Default Labels</h5>
+				<p:selectBooleanButton id="defaultLabels" />
+
+				<br />
+				<p:commandButton
+					id="submit"
+					update="@form"
+					value="Submit"
+					actionListener="#{selectBooleanButton001.addMessage}"
+				/>
+			</h:form>
+
+		</h:body>
+	</f:view>
 
 </html>

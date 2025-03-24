@@ -1,31 +1,54 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:p="primefaces">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+>
 
-<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-    <h:head>
+	<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+		<h:head>
 
-    </h:head>
+		</h:head>
 
-    <h:body>
+		<h:body>
 
-        <h:form id="form">
-            <p:messages id="msgs" showDetail="true">
-                <p:autoUpdate/>
-            </p:messages>
-            <br/>
+			<h:form id="form">
+				<p:messages id="msgs" showDetail="true">
+					<p:autoUpdate />
+				</p:messages>
+				<br />
 
-            <p:inputMask id="inputmask" label="value" value="#{inputMask001.value}" mask="*****-*****-*****-*****" maxlength="23" size="55" readonly="true"/>
-            <br/>
-            <p:inputMask id="inputmask2" label="value" value="#{inputMask001.value2}" mask="*****-*****-*****-*****" maxlength="23" size="55" disabled="true"/>
-            <br/>
+				<p:inputMask
+					id="inputmask"
+					label="value"
+					value="#{inputMask001.value}"
+					mask="*****-*****-*****-*****"
+					maxlength="23"
+					size="55"
+					readonly="true"
+				/>
+				<br />
+				<p:inputMask
+					id="inputmask2"
+					label="value"
+					value="#{inputMask001.value2}"
+					mask="*****-*****-*****-*****"
+					maxlength="23"
+					size="55"
+					disabled="true"
+				/>
+				<br />
 
-            <p:commandButton id="button" value="Submit" action="#{inputMask001.addMsg}" ajax="false"/>
-        </h:form>
+				<p:commandButton
+					id="button"
+					value="Submit"
+					action="#{inputMask001.addMsg}"
+					ajax="false"
+				/>
+			</h:form>
 
-    </h:body>
-</f:view>
+		</h:body>
+	</f:view>
 
 </html>

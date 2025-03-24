@@ -1,13 +1,15 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="jakarta.faces.facelets"
-                xmlns:h="jakarta.faces.html"
-                xmlns:f="jakarta.faces.core"
-                xmlns:p="primefaces"
-                template="/WEB-INF/template.xhtml">
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core"
+	xmlns:p="primefaces"
+	template="/WEB-INF/template.xhtml"
+>
 
-    <ui:define name="head">
-        <style>
-            .ui-diagram-element {
+	<ui:define name="head">
+		<style>
+			.ui-diagram-element {
                 width: 14em;
                 height: 4em;
                 line-height: 4em;
@@ -34,24 +36,29 @@
                 font-size: 18px;
                 font-weight: bold;
             }
-        </style>
-    </ui:define>
+		</style>
+	</ui:define>
 
-    <ui:define name="title">
-        Diagram <span class="subitem">StateMachine</span>
-    </ui:define>
+	<ui:define name="title">
+		Diagram
+		<span class="subitem">StateMachine</span>
+	</ui:define>
 
-    <ui:define name="description">
-        StateMachines can be created using state machine connectors.
-    </ui:define>
+	<ui:define name="description">
+		StateMachines can be created using state machine connectors.
+	</ui:define>
 
-    <ui:param name="documentationLink" value="/components/diagram"/>
-    <ui:param name="widgetLink" value="Diagram-1"/>
+	<ui:param name="documentationLink" value="/components/diagram" />
+	<ui:param name="widgetLink" value="Diagram-1" />
 
-    <ui:define name="implementation">
-        <div class="card">
-            <p:diagram value="#{diagramStateMachineView.model}" style="height:700px" styleClass="ui-widget-content"/>
-        </div>
-    </ui:define>
+	<ui:define name="implementation">
+		<div class="card">
+			<p:diagram
+				value="#{diagramStateMachineView.model}"
+				style="height:700px"
+				styleClass="ui-widget-content"
+			/>
+		</div>
+	</ui:define>
 
 </ui:composition>
